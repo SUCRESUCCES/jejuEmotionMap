@@ -82,5 +82,3 @@ jejuEmotionMap/
 ├── images/              # README 이미지
 └── README.md
 ```
-
-MIT License
