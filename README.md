@@ -52,10 +52,35 @@
 - **KoBERT** - 키워드 추출
 - **GPT-4** - 텍스트 해석
 
+
+<!--
 ## 🚀 시작하기
 
 ### 설치
-
 ```bash
-
+git clone https://github.com/SUCRESUCCES/jejuEmotionMap.git
+cd jejuEmotionMap
+npm install
+npm run dev
 ```
+
+### 환경변수
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_key
+```
+-->
+
+## 📂 프로젝트 구조
+```
+jejuEmotionMap/
+├── src/
+│   ├── components/       # React 컴포넌트
+│   ├── shared/services/  # API 서비스
+│   ├── hooks/           # Custom Hooks
+│   └── utils/           # 유틸리티 함수
+├── images/              # README 이미지
+└── README.md
+```
+
+MIT License
