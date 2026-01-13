@@ -19,66 +19,16 @@ import {
 } from "../dashboard/constants/ssiMockData";
 // JSON 리포트 데이터 로더
 import { getRegionReport, type RegionReport } from "../../mocks/reportLoader";
-// 새 컴포넌트
+
 import IssueAnalysis from "../../components/depth2/IssueAnalysis";
 import InsightSectionNew from "../../components/depth2/InsightSection";
-
-// --- Types ---
+import { Depth2ReportProps, RegionAnalysisData } from "../../types/region";
 
 interface Message {
   id: string;
   text: string;
   sender: "user" | "bot";
   timestamp: Date;
-}
-
-interface RegionAnalysisData {
-  region_name: string;
-  ssi_score: number;
-  risk_level: string;
-  total_posts: number;
-  platform_distribution?: Array<{
-    platform: string;
-    count: number;
-    color: string;
-  }>;
-  positive_issues: Array<{
-    keyword: string;
-    voices: string[];
-    context?: string;
-    related_issues?: string;
-  }>;
-  negative_issues: Array<{
-    keyword: string;
-    severity?: string;
-    voices: string[];
-    context?: string;
-    related_issues?: string;
-  }>;
-  neutral_issues?: Array<{
-    keyword: string;
-    voices: string[];
-    context?: string;
-    related_issues?: string;
-  }>;
-  trend_data: number[];
-  insights?: Array<{
-    title: string;
-    description: string;
-    details?: string[];
-  }>;
-}
-
-interface Depth2ReportProps {
-  startDate: string;
-  endDate: string;
-  tempStartDate: string;
-  tempEndDate: string;
-  onTempStartDateChange: (date: string) => void;
-  onTempEndDateChange: (date: string) => void;
-  onSearch: () => void;
-  reportData: RegionAnalysisData | null;
-  selectedRegion: string;
 }
 
 // --- Constants & Helpers ---
