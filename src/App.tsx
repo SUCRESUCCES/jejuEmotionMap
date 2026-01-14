@@ -2,24 +2,7 @@ import Depth1Dashboard from "./features/dashboard/DashboardPage";
 import Depth2Page from "./features/chat/components/Depth2Page";
 import { useEffect, useState } from "react";
 import imgVector from "figma:asset/6f45711041117bd80b7104f70704abeee8a37bec.png";
-
-// 날짜를 YYYY-MM-DD 형식으로 변환하는 헬퍼 함수
-const formatDate = (date: Date): string => {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-};
-
-const getDefaultDates = () => {
-  const today = new Date();
-  const sevenDaysAgo = new Date(today);
-  sevenDaysAgo.setDate(today.getDate() - 7);
-  return {
-    start: formatDate(sevenDaysAgo),
-    end: formatDate(today),
-  };
-};
+import { formatDate, getDefaultDates } from "./utils/dateUtils";
 
 export default function App() {
   const defaultDates = getDefaultDates();
